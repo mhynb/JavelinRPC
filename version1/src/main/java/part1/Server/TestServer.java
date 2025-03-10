@@ -8,7 +8,7 @@ import part1.Server.server.impl.SimpleRPCRPCServer;
 import part1.Server.provider.ServiceProvider;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/11 19:39
  */

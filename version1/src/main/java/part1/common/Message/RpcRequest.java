@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/1 18:30
  * 定义发送的消息格式

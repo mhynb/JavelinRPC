@@ -14,23 +14,24 @@ import java.lang.reflect.Method;
 import java.net.Socket;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/14 17:39
  */
 @AllArgsConstructor
-public class WorkThread implements Runnable{
+public class WorkThread implements Runnable {
     private Socket socket;
     private ServiceProvider serviceProvide;
+
     @Override
     public void run() {
         try {
-            ObjectOutputStream oos=new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream ois=new ObjectInputStream(socket.getInputStream());
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             //读取客户端传过来的request
             RpcRequest rpcRequest = (RpcRequest) ois.readObject();
             //反射调用服务方法获取返回值
-            RpcResponse rpcResponse=getResponse(rpcRequest);
+            RpcResponse rpcResponse = getResponse(rpcRequest);
             //向客户端写入response
             oos.writeObject(rpcResponse);
             oos.flush();
@@ -38,16 +39,17 @@ public class WorkThread implements Runnable{
             e.printStackTrace();
         }
     }
-    private RpcResponse getResponse(RpcRequest rpcRequest){
+
+    private RpcResponse getResponse(RpcRequest rpcRequest) {
         //得到服务名
-        String interfaceName=rpcRequest.getInterfaceName();
+        String interfaceName = rpcRequest.getInterfaceName();
         //得到服务端相应服务实现类
         Object service = serviceProvide.getService(interfaceName);
         //反射调用方法
-        Method method=null;
+        Method method = null;
         try {
-            method= service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParamsType());
-            Object invoke=method.invoke(service,rpcRequest.getParams());
+            method = service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParamsType());
+            Object invoke = method.invoke(service, rpcRequest.getParams());
             return RpcResponse.sussess(invoke);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();

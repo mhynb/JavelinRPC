@@ -38,7 +38,7 @@
       <module name="version3" target="8" />
       <module name="version4" target="8" />
       <module name="version5" target="17" />
-      <module name="version6" target="17" />
+      <module name="version6" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
