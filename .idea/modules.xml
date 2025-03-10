@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavelinRPC.iml" filepath="$PROJECT_DIR$/.idea/JavelinRPC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/krpc-api/krpc-api.iml" filepath="$PROJECT_DIR$/version5/krpc-api/krpc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/krpc-api/krpc-api (1).iml" filepath="$PROJECT_DIR$/version6/krpc-api/krpc-api (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/krpc-common/krpc-common.iml" filepath="$PROJECT_DIR$/version5/krpc-common/krpc-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/krpc-common/krpc-common (1).iml" filepath="$PROJECT_DIR$/version6/krpc-common/krpc-common (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/krpc-consumer/krpc-consumer.iml" filepath="$PROJECT_DIR$/version5/krpc-consumer/krpc-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/krpc-consumer/krpc-consumer (1).iml" filepath="$PROJECT_DIR$/version6/krpc-consumer/krpc-consumer (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/krpc-core/krpc-core.iml" filepath="$PROJECT_DIR$/version5/krpc-core/krpc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/krpc-core/krpc-core (1).iml" filepath="$PROJECT_DIR$/version6/krpc-core/krpc-core (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/krpc-provider/krpc-provider.iml" filepath="$PROJECT_DIR$/version5/krpc-provider/krpc-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/krpc-provider/krpc-provider (1).iml" filepath="$PROJECT_DIR$/version6/krpc-provider/krpc-provider (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/version1/version1.iml" filepath="$PROJECT_DIR$/version1/version1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version2/version2.iml" filepath="$PROJECT_DIR$/version2/version2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version3/version3.iml" filepath="$PROJECT_DIR$/version3/version3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version4/version4.iml" filepath="$PROJECT_DIR$/version4/version4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version5/version5.iml" filepath="$PROJECT_DIR$/version5/version5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version6/version6.iml" filepath="$PROJECT_DIR$/version6/version6.iml" />
+    </modules>
+  </component>
+</project>

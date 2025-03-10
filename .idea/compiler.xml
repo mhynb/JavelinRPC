@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="krpc-core" />
+        <module name="krpc-consumer (1)" />
+        <module name="krpc-provider (1)" />
+        <module name="krpc-api" />
+        <module name="krpc-common (1)" />
+        <module name="krpc-consumer" />
+        <module name="krpc-api (1)" />
+        <module name="version4" />
+        <module name="version2" />
+        <module name="version3" />
+        <module name="version1" />
+        <module name="krpc-core (1)" />
+        <module name="krpc-common" />
+        <module name="krpc-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="krpc-api" target="17" />
+      <module name="krpc-api (1)" target="17" />
+      <module name="krpc-common" target="17" />
+      <module name="krpc-common (1)" target="17" />
+      <module name="krpc-consumer" target="17" />
+      <module name="krpc-consumer (1)" target="17" />
+      <module name="krpc-core" target="17" />
+      <module name="krpc-core (1)" target="17" />
+      <module name="krpc-provider" target="17" />
+      <module name="krpc-provider (1)" target="17" />
+      <module name="version1" target="8" />
+      <module name="version2" target="8" />
+      <module name="version3" target="8" />
+      <module name="version4" target="8" />
+      <module name="version5" target="17" />
+      <module name="version6" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
