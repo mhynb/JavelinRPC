@@ -22,16 +22,17 @@ public class ThreadPoolRPCRPCServer implements RpcServer {
     private final ThreadPoolExecutor threadPool;
     private ServiceProvider serviceProvider;
 
-    public ThreadPoolRPCRPCServer(ServiceProvider serviceProvider){
-        threadPool=new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
-                1000,60, TimeUnit.SECONDS,new ArrayBlockingQueue<>(100));
-        this.serviceProvider= serviceProvider;
+    public ThreadPoolRPCRPCServer(ServiceProvider serviceProvider) {
+        threadPool = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
+                1000, 60, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100));
+        this.serviceProvider = serviceProvider;
     }
+
     public ThreadPoolRPCRPCServer(ServiceProvider serviceProvider, int corePoolSize,
                                   int maximumPoolSize,
                                   long keepAliveTime,
                                   TimeUnit unit,
-                                  BlockingQueue<Runnable> workQueue){
+                                  BlockingQueue<Runnable> workQueue) {
 
         threadPool = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
         this.serviceProvider = serviceProvider;
@@ -41,10 +42,10 @@ public class ThreadPoolRPCRPCServer implements RpcServer {
     public void start(int port) {
         System.out.println("服务端启动了");
         try {
-            ServerSocket serverSocket=new ServerSocket();
-            while (true){
-                Socket socket= serverSocket.accept();
-                threadPool.execute(new WorkThread(socket,serviceProvider));
+            ServerSocket serverSocket = new ServerSocket(port);
+            while (true) {
+                Socket socket = serverSocket.accept();
+                threadPool.execute(new WorkThread(socket, serviceProvider));
             }
         } catch (IOException e) {
             e.printStackTrace();
