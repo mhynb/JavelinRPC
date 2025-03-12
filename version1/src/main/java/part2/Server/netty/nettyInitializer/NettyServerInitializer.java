@@ -14,19 +14,20 @@ import part2.Server.netty.handler.NettyRPCServerHandler;
 import part2.Server.provider.ServiceProvider;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/26 16:15
  */
 @AllArgsConstructor
 public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
     private ServiceProvider serviceProvider;
+
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         //消息格式 【长度】【消息体】，解决沾包问题
         pipeline.addLast(
-                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,0,4,0,4));
+                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
         //计算当前待发送消息的长度，写入到前4个字节中
         pipeline.addLast(new LengthFieldPrepender(4));
 

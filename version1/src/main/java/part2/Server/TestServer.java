@@ -9,7 +9,7 @@ import part2.Server.server.RpcServer;
 import part2.Server.server.impl.SimpleRPCRPCServer;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/11 19:39
  */

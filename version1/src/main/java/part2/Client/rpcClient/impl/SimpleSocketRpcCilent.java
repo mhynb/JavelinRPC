@@ -10,28 +10,30 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/5/2 18:58
  */
 public class SimpleSocketRpcCilent implements RpcClient {
     private String host;
     private int port;
-    public SimpleSocketRpcCilent(String host,int port){
-        this.host=host;
-        this.port=port;
+
+    public SimpleSocketRpcCilent(String host, int port) {
+        this.host = host;
+        this.port = port;
     }
+
     @Override
     public RpcResponse sendRequest(RpcRequest request) {
         try {
-            Socket socket=new Socket(host, port);
-            ObjectOutputStream oos=new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream ois=new ObjectInputStream(socket.getInputStream());
+            Socket socket = new Socket(host, port);
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
 
             oos.writeObject(request);
             oos.flush();
 
-            RpcResponse response=(RpcResponse) ois.readObject();
+            RpcResponse response = (RpcResponse) ois.readObject();
             return response;
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

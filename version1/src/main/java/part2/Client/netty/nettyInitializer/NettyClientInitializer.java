@@ -12,7 +12,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import part2.Client.netty.handler.NettyClientHandler;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/26 17:26
  */
@@ -22,7 +22,7 @@ public class NettyClientInitializer extends ChannelInitializer<SocketChannel> {
         ChannelPipeline pipeline = ch.pipeline();
         //消息格式 【长度】【消息体】，解决沾包问题
         pipeline.addLast(
-                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,0,4,0,4));
+                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
         //计算当前待发送消息的长度，写入到前4个字节中
         pipeline.addLast(new LengthFieldPrepender(4));
         //编码器

@@ -10,13 +10,14 @@ import part2.Server.provider.ServiceProvider;
 import part2.Server.server.RpcServer;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/2/26 14:01
  */
 @AllArgsConstructor
 public class NettyRPCRPCServer implements RpcServer {
     private ServiceProvider serviceProvider;
+
     @Override
     public void start(int port) {
         // netty 服务线程组boss负责建立连接， work负责具体的请求
@@ -27,16 +28,16 @@ public class NettyRPCRPCServer implements RpcServer {
             //启动netty服务器
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             //初始化
-            serverBootstrap.group(bossGroup,workGroup).channel(NioServerSocketChannel.class)
+            serverBootstrap.group(bossGroup, workGroup).channel(NioServerSocketChannel.class)
                     //NettyClientInitializer这里 配置netty对消息的处理机制
                     .childHandler(new NettyServerInitializer(serviceProvider));
             //同步堵塞
-            ChannelFuture channelFuture=serverBootstrap.bind(port).sync();
+            ChannelFuture channelFuture = serverBootstrap.bind(port).sync();
             //死循环监听
             channelFuture.channel().closeFuture().sync();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             bossGroup.shutdownGracefully();
             workGroup.shutdownGracefully();
         }
