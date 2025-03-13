@@ -10,7 +10,7 @@ import part1.common.Message.RpcResponse;
 import part1.common.serializer.mySerializer.Serializer;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/6/2 22:24
  *   依次按照自定义的消息格式写入，传入的数据为request或者response

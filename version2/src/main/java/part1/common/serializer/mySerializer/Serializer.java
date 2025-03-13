@@ -2,7 +2,7 @@ package part1.common.serializer.mySerializer;
 
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/6/2 22:31
  */

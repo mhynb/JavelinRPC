@@ -17,7 +17,7 @@ import part3.Client.rpcClient.RpcClient;
 import java.net.InetSocketAddress;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/5/2 19:40
  */
@@ -27,8 +27,9 @@ public class NettyRpcClient implements RpcClient {
     private static final EventLoopGroup eventLoopGroup;
 
     private ServiceCenter serviceCenter;
-    public NettyRpcClient(){
-        this.serviceCenter=new ZKServiceCenter();
+
+    public NettyRpcClient() {
+        this.serviceCenter = new ZKServiceCenter();
     }
 
     //netty客户端初始化
@@ -38,6 +39,7 @@ public class NettyRpcClient implements RpcClient {
         bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class)
                 .handler(new NettyClientInitializer());
     }
+
     @Override
     public RpcResponse sendRequest(RpcRequest request) {
         //从注册中心获取host,post
@@ -45,7 +47,7 @@ public class NettyRpcClient implements RpcClient {
         String host = address.getHostName();
         int port = address.getPort();
         try {
-            ChannelFuture channelFuture  = bootstrap.connect(host, port).sync();
+            ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
             Channel channel = channelFuture.channel();
             // 发送数据
             channel.writeAndFlush(request);

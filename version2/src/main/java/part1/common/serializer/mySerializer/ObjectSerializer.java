@@ -3,7 +3,7 @@ package part1.common.serializer.mySerializer;
 import java.io.*;
 
 /**
- * @author wxx
+ * @author mhynb
  * @version 1.0
  * @create 2024/6/2 22:36
  */
@@ -11,8 +11,8 @@ public class ObjectSerializer implements Serializer {
     //利用Java io 对象 -》字节数组
     @Override
     public byte[] serialize(Object obj) {
-        byte[] bytes=null;
-        ByteArrayOutputStream bos=new ByteArrayOutputStream();
+        byte[] bytes = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             //是一个对象输出流，用于将 Java 对象序列化为字节流，并将其连接到bos上
             ObjectOutputStream oos = new ObjectOutputStream(bos);
